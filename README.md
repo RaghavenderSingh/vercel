@@ -1,27 +1,33 @@
-# Vercel Deployment Service
+# Vercel Clone
 
+## Tech Stack
 
+This is not a monorepo and each folder is a seperate service. Folder names should be self-explanatory. For backend I've used following tech, for packages, you could also check package.json.
 
-## ```.env``` setup 
+- AWS : Used extensively, to deploy, run, store code.
+- Redis: Used for storing project status etc
 
-Before running the services locally make sure to add this ```.env``` file and content init .
+For frontend
 
-```/vercel-deploy-service```
-```bash
-AWS_ACCESS_KEY=YOUR_ACCESS_KEY
+- React
+- Tailwind and Radix UI
+- Vite for bundling
 
-AWS_SECRET_ACCESS_KEY=YOUR_ACCESS_KEY
+## Running the code
 
-CLOUDFLARE_STORAGE_ENDPOINT=YOUR_ENDPOINT_URL
+For frontend, do `npm install` and `npm run dev` to start vite server.
+
+For backend:
+
+- Set the AWS secret values in `.env` file.
+
+```
+AWS_ACCESS_KEY_ID="your AWS access key"
+AWS_SECRET_ACCESS_KEY="your aws secret key"
+CLOUDFLARE_STORAGE_ENDPOINT="your cloudfront endpoint to connect to s3"
 ```
 
-```/vercel-upload-service```  & ```/vercel-request-handler```
-```bash
-AWS_ACCESS_KEY=YOUR_ACCESS_KEY
-
-AWS_SECRET_ACCESS_KEY=YOUR_ACCESS_KEY
-
-CLOUDFLARE_STORAGE_ENDPOINT=YOUR_ENDPOINT_URL
-
-PORT=YOUR_PREFFERED_PORT_NO
-```
+- Just do `npm install` and `npx ts-node-dev src/index.ts` or you can also build it using `tsc` or `esbuild` etc.
+  AWS_ACCESS_KEY_ID="your AWS access key"
+  AWS_SECRET_ACCESS_KEY="your aws secret key"
+  CLOUDFLARE_STORAGE_ENDPOINT="your cloudfront endpoint to connect to s3"
