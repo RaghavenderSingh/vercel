@@ -3,9 +3,9 @@ import fs from "fs";
 import path from "path";
 
 const s3 = new S3({
-    accessKeyId: "c4ffb33c385412abf3fe0255c56b1632",
-    secretAccessKey: "584bf9d5754a902d7f855ebdafdc0c01abe10fdcf71d4466f29c34b2b5e5b790",
-    endpoint: "https://7a5aeb89a34de9310cd9648184cc4b94.r2.cloudflarestorage.com"
+    accessKeyId: AWS_ACCESS_KEY,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+    endpoint: CLOUDFLARE_STORAGE_ENDPOINT
 })
 
 // output/asdasd
